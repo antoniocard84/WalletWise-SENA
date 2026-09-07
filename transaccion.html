@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Nueva Transacción</title>
+
+    <!-- Tailwind CSS -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+    <!-- CONTENEDOR PRINCIPAL -->
+
+    <div class="w-full max-w-md min-h-screen bg-white shadow-2xl flex flex-col">
+
+        <!-- HEADER -->
+
+        <div class="bg-white p-5 flex items-center border-b border-gray-200">
+
+            <!-- BOTON VOLVER -->
+
+            <button
+
+            onclick="window.location.href='dashboard.html'"
+
+            class="mr-4 text-2xl text-gray-700 hover:text-blue-600 transition">
+
+                ←
+
+            </button>
+
+            <h1 class="text-xl font-black text-gray-800">
+
+                Nueva Transacción
+
+            </h1>
+
+        </div>
+
+        <!-- CONTENIDO -->
+
+        <div class="flex-1 p-5">
+
+            <!-- FORMULARIO -->
+
+            <form class="space-y-5">
+
+                <!-- TIPO -->
+
+                <div>
+
+                    <label class="text-sm font-bold text-gray-700">
+
+                        Tipo de Movimiento
+
+                    </label>
+
+                    <select
+
+                    id="tipo"
+
+                    class="w-full mt-2 p-4 rounded-2xl border border-gray-200 bg-gray-50 focus:outline-none focus:border-blue-500">
+
+                        <option>
+                            Ingreso
+                        </option>
+
+                        <option>
+                            Gasto
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- DESCRIPCION -->
+
+                <div>
+
+                    <label class="text-sm font-bold text-gray-700">
+
+                        Descripción
+
+                    </label>
+
+                    <input
+
+                    id="descripcion"
+
+                    type="text"
+
+                    placeholder="Ejemplo: Mercado"
+
+                    class="w-full mt-2 p-4 rounded-2xl border border-gray-200 bg-gray-50 focus:outline-none focus:border-blue-500">
+
+                </div>
+
+                <!-- MONTO -->
+
+                <div>
+
+                    <label class="text-sm font-bold text-gray-700">
+
+                        Monto
+
+                    </label>
+
+                    <input
+
+                    id="monto"
+
+                    type="number"
+
+                    placeholder="$ 0"
+
+                    class="w-full mt-2 p-4 rounded-2xl border border-gray-200 bg-gray-50 focus:outline-none focus:border-blue-500">
+
+                </div>
+
+                <!-- CATEGORIA -->
+
+                <div>
+
+                    <label class="text-sm font-bold text-gray-700">
+
+                        Categoría
+
+                    </label>
+
+                    <select
+
+                    id="categoria"
+
+                    class="w-full mt-2 p-4 rounded-2xl border border-gray-200 bg-gray-50 focus:outline-none focus:border-blue-500">
+
+                        <option>
+                            Alimentación
+                        </option>
+
+                        <option>
+                            Transporte
+                        </option>
+
+                        <option>
+                            Servicios
+                        </option>
+
+                        <option>
+                            Entretenimiento
+                        </option>
+
+                        <option>
+                            Salario
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- FECHA -->
+
+                <div>
+
+                    <label class="text-sm font-bold text-gray-700">
+
+                        Fecha
+
+                    </label>
+
+                    <input
+
+                    id="fecha"
+
+                    type="date"
+
+                    class="w-full mt-2 p-4 rounded-2xl border border-gray-200 bg-gray-50 focus:outline-none focus:border-blue-500">
+
+                </div>
+
+                <!-- BOTON -->
+
+                <button
+
+                type="button"
+
+                onclick="guardarMovimiento()"
+
+                class="w-full bg-blue-600 text-white py-4 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg">
+
+                    Guardar Movimiento
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ====================================================================
+         METADATOS BÁSICOS Y CONFIGURACIÓN DE PÁGINA
+         ==================================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WalletWise | Login</title>
+
+    <!-- ====================================================================
+         RECURSOS EXTERNOS (CDN)
+         - Tailwind CSS: Framework de estilos utilitarios
+         ==================================================================== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <!-- ====================================================================
+         ESTILOS PERSONALIZADOS GLOBAL
+         ==================================================================== -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(
+                135deg,
+                #eaf3ff 0%,
+                #dcecff 100%
+            );
+        }
+    </style>
+</head>
+<body class="min-h-screen flex justify-center items-center px-4">
+
+    <!-- ====================================================================
+         CONTENEDOR PRINCIPAL TARJETA DE LOGIN
+         ==================================================================== -->
+    <main class="w-full max-w-[390px] bg-white rounded-[35px] shadow-2xl overflow-hidden">
+
+        <!-- ----------------------------------------------------------------
+             ENCABEZADO DECORATIVO CON LOGOTIPO
+             ---------------------------------------------------------------- -->
+        <div class="relative h-[220px] bg-gradient-to-br from-blue-500 to-sky-400">
+            <!-- Círculo decorativo de fondo -->
+            <div class="absolute -top-10 -left-10 w-40 h-40 bg-white/10 rounded-full"></div>
+
+            <!-- Contenedor del Logotipo Principal -->
+            <div class="absolute bottom-[-45px] left-1/2 -translate-x-1/2">
+                <div class="w-[145px] h-[145px] bg-white rounded-[30px] shadow-xl flex items-center justify-center">
+                    <img 
+                        src="img/logo.png" 
+                        alt="Logo de WalletWise" 
+                        class="w-30 object-contain"
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- ----------------------------------------------------------------
+             SECCIÓN DE FORMULARIO Y ACCIONES DE USUARIO
+             ---------------------------------------------------------------- -->
+        <section class="px-7 pt-16 pb-8">
+
+            <!-- Título y Subtítulo Informativo -->
+            <div class="text-center">
+                <h1 class="text-[30px] font-bold text-slate-800">
+                    Bienvenido
+                </h1>
+                <p class="text-slate-500 text-sm mt-2">
+                    Inicia sesión para continuar
+                </p>
+            </div>
+
+            <!-- Formulario Principal de Autenticación -->
+            <form class="mt-8 space-y-4" onsubmit="event.preventDefault();">
+
+                <!-- Campo: Correo Electrónico -->
+                <div class="relative">
+                    <i class="fa-regular fa-user absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input
+                        id="correoLogin"
+                        type="email"
+                        placeholder="Correo electrónico"
+                        class="w-full h-[54px] bg-slate-50 border border-slate-200 rounded-2xl pl-12 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                        required
+                    >
+                </div>
+
+                <!-- Campo: Contraseña (Con botón para Mostrar/Ocultar) -->
+                <div class="relative">
+                    <i class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input 
+                        id="passwordLogin" 
+                        type="password" 
+                        placeholder="Contraseña" 
+                        class="w-full h-[54px] bg-slate-50 border border-slate-200 rounded-2xl pl-12 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                        required
+                    >
+                    <button 
+                        type="button" 
+                        onclick="togglePassword('passwordLogin')" 
+                        aria-label="Mostrar u ocultar contraseña"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition cursor-pointer"
+                    >
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </div>
+
+                <!-- Enlace de Recuperación de Contraseña -->
+                <div class="flex justify-end">
+                    <a href="#" class="text-sm text-blue-600 hover:underline">
+                        ¿Olvidaste tu contraseña?
+                    </a>
+                </div>
+
+                <!-- Botón Acción Principal: Iniciar Sesión -->
+                <button
+                    type="button"
+                    onclick="iniciarSesion()"
+                    class="w-full h-[54px] rounded-2xl bg-gradient-to-r from-blue-500 to-sky-500 text-white font-semibold shadow-lg hover:scale-[1.01] transition duration-300 cursor-pointer"
+                >
+                    Iniciar sesión
+                </button>
+
+            </form>
+
+            <!-- Separador Visual entre Métodos de Autenticación -->
+            <div class="flex items-center gap-3 my-7">
+                <div class="flex-1 h-[1px] bg-slate-200"></div>
+                <span class="text-sm text-slate-400">
+                    o continúa con
+                </span>
+                <div class="flex-1 h-[1px] bg-slate-200"></div>
+            </div>
+
+            <!-- Botones de Autenticación Social -->
+            <div class="grid grid-cols-2 gap-3">
+                <!-- Login con Google -->
+                <button
+                    type="button"
+                    class="h-[52px] bg-white border border-slate-200 rounded-2xl flex items-center justify-center gap-2 font-medium text-sm hover:bg-slate-50 transition shadow-sm cursor-pointer"
+                >
+                    <i class="fa-brands fa-google text-red-500 text-base"></i>
+                    Google
+                </button>
+
+                <!-- Login con Facebook -->
+                <button
+                    type="button"
+                    class="h-[52px] bg-white border border-slate-200 rounded-2xl flex items-center justify-center gap-2 font-medium text-sm hover:bg-slate-50 transition shadow-sm cursor-pointer"
+                >
+                    <i class="fa-brands fa-facebook-f text-blue-600 text-base"></i>
+                    Facebook
+                </button>
+            </div>
+
+            <!-- Acceso Alternativo: Modo Invitado -->
+            <button
+                type="button"
+                onclick="entrarInvitado()"
+                class="w-full h-[52px] mt-4 bg-slate-100 hover:bg-slate-200 rounded-2xl text-slate-700 font-medium transition flex items-center justify-center gap-2 cursor-pointer"
+            >
+                <i class="fa-regular fa-user"></i>
+                Entrar como Invitado
+            </button>
+
+            <!-- Pie de Tarjeta: Registro de Nuevas Cuentas -->
+            <div class="text-center mt-8">
+                <p class="text-sm text-slate-500">
+                    ¿No tienes cuenta?
+                    <a href="registro.html" class="text-blue-600 font-semibold hover:underline">
+                        Regístrate
+                    </a>
+                </p>
+            </div>
+
+            <!-- Pie de Página: Derechos y Marca de Autor -->
+            <footer class="mt-8 text-center text-xs text-slate-400">
+                <p>© 2026 WalletWise. Desarrollado por Antony & Gabriela.</p>
+            </footer>
+
+        </section>
+
+    </main>
+
+    <!-- ====================================================================
+         LÓGICA JAVASCRIPT DEL PROYECTO
+         ==================================================================== -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Registro - WalletWise</title>
+
+    <!-- Tailwind CSS -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+    <!-- CONTENEDOR -->
+
+    <div class="w-full max-w-md bg-white min-h-screen shadow-2xl flex flex-col justify-center p-8">
+
+        <!-- LOGO -->
+
+        <div class="text-center mb-10">
+
+            <div class="w-24 h-24 bg-blue-600 rounded-3xl flex items-center justify-center mx-auto shadow-xl">
+
+                <span class="text-white text-4xl font-black">
+                    W²
+                </span>
+
+            </div>
+
+            <h1 class="text-3xl font-black text-gray-800 mt-5">
+
+                Crear Cuenta
+
+            </h1>
+
+            <p class="text-gray-500 mt-2">
+
+                Regístrate para comenzar
+
+            </p>
+
+        </div>
+
+        <!-- FORMULARIO -->
+
+        <form class="space-y-5">
+
+            <!-- NOMBRE -->
+
+            <div>
+
+                <label class="text-sm font-semibold text-gray-700">
+
+                    Nombre Completo
+
+                </label>
+
+                <input
+
+                id="nombreRegistro"
+
+                type="text"
+
+                placeholder="Juan Pérez"
+
+                class="w-full mt-2 p-4 rounded-2xl border border-gray-200 focus:outline-none focus:border-blue-500">
+
+            </div>
+
+            <!-- CORREO -->
+
+            <div>
+
+                <label class="text-sm font-semibold text-gray-700">
+
+                    Correo Electrónico
+
+                </label>
+
+                <input
+
+                id="correoRegistro"
+
+                type="email"
+
+                placeholder="correo@ejemplo.com"
+
+                class="w-full mt-2 p-4 rounded-2xl border border-gray-200 focus:outline-none focus:border-blue-500">
+
+            </div>
+
+            <!-- PASSWORD -->
+
+            <div>
+
+                <label class="text-sm font-semibold text-gray-700">
+
+                    Contraseña
+
+                </label>
+
+                <input
+
+                id="passwordRegistro"
+
+                type="password"
+
+                placeholder="********"
+
+                class="w-full mt-2 p-4 rounded-2xl border border-gray-200 focus:outline-none focus:border-blue-500">
+
+            </div>
+
+            <!-- BOTON -->
+
+            <button
+
+            type="button"
+
+            onclick="registrarUsuario()"
+
+            class="w-full bg-blue-600 text-white py-4 rounded-2xl font-bold hover:bg-blue-700 transition">
+
+                Registrarse
+
+            </button>
+
+        </form>
+
+        <!-- LOGIN -->
+
+        <div class="text-center mt-8">
+
+            <p class="text-gray-500">
+
+                ¿Ya tienes cuenta?
+
+                <a
+
+                href="index.html"
+
+                class="text-blue-600 font-bold">
+
+                    Iniciar Sesión
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
