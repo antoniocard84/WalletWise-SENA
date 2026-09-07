@@ -374,4 +374,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
-console.log("Prueba de actualización realizada");
