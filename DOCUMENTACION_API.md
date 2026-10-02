@@ -1,6 +1,6 @@
 # Documentación de Servicios Web / API REST - WalletWise
-**Evidencia:** GA7-220501096-AA5-EV03  
-**Aprendiz:** Antony Arango Cardona  
+**Evidencia:** GA7-220501096-AA5-EV03
+**Aprendiz:** Antony Arango Cardona
 
 ---
 
@@ -16,7 +16,7 @@
   "correo": "antony@walletwise.com",
   "password": "123"
 }
-B. Gestión de Transacciones
+Gestión de Transacciones
 Endpoint: /api/v1/transactions
 
 Método HTTP: GET
@@ -36,7 +36,7 @@ Cuerpo de la Petición (JSON):
   "categoria": "Alimentación",
   "descripcion": "Compra del mes"
 }
-C. Sistema de Alerta de Presupuesto
+Sistema de Alerta de Presupuesto
 Endpoint: /api/v1/budget/limit
 
 Método HTTP: POST
